@@ -12,7 +12,7 @@ def getExcelSheetData(excelFilename, sheetName, calculateFormulas = True):
     to calculate formulas.
     '''
     
-    if not excelFilename.endswith(".xls") or excelFilename.endswith(".xlsx"):
+    if not (excelFilename.endswith(".xls") or excelFilename.endswith(".xlsx")):
         raise Exception("Must use file extension '.xls' or '.xlsx'. This file is invalid: %s" %(excelFilename))
     
     #Open a FileInputStream (used to read contents of file as a stream of bytes)
