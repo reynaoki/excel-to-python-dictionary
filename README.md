@@ -1,5 +1,16 @@
 # excel-to-python-dictionary
-A function that parses through an Excel file using Apache POI. Returns a dictionary where the keys are row indices and the values are a list of the contents of a single row.
+A Jython function that parses through an Excel file (either .xls or .xlsx) using Apache POI. Returns a dictionary where the keys are row indices and the values are a list of the contents of a single row.
+
+## Required imports
+from java.io import FileInputStream
+- Make sure Jython is running
+
+from org.apache.poi.hssf.usermodel import HSSFWorkbook
+from org.apache.poi.hssf.usermodel import HSSFFormulaEvaluator
+from org.apache.poi.xssf.usermodel import XSSFWorkbook
+from org.apache.poi.xssf.usermodel import XSSFFormulaEvaluator
+- Download 'poi-ooxml-version-yyyymmdd.jar' from http://poi.apache.org
+- Fully tested on Apache POI version 3.8. Download link: https://archive.apache.org/dist/poi/release/bin/poi-bin-3.8-20120326.zip
 
 ## Function arguments
 def getExcelSheetData(excelFilename, sheetName, calculateFormulas = True):
