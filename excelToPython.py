@@ -1,3 +1,9 @@
+from java.io import FileInputStream
+from org.apache.poi.hssf.usermodel import HSSFWorkbook
+from org.apache.poi.hssf.usermodel import HSSFFormulaEvaluator
+from org.apache.poi.xssf.usermodel import XSSFWorkbook
+from org.apache.poi.xssf.usermodel import XSSFFormulaEvaluator
+
 def getExcelSheetData(excelFilename, sheetName, calculateFormulas = True):
     '''
     Parses through an Excel spreadsheet and returns a dictionary of the entire spreadsheet. 
