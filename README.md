@@ -18,7 +18,7 @@ from org.apache.poi.xssf.usermodel import XSSFFormulaEvaluator
 - Fully tested on Apache POI version 3.8. Download link: https://archive.apache.org/dist/poi/release/bin/poi-bin-3.8-20120326.zip
 
 ## Function arguments
-def getExcelSheetData(excelFilename, sheetName, calculateFormulas = True):
+def getExcelSheetData(excelFilename, sheetName, calculateFormulas = True, keepCommentLines = False):
 
 ### excelFilename:
 A string containing the complete filename of the Excel file that you want to extract data from. For example, "D:\sampleFile.xlsx"
@@ -30,6 +30,11 @@ Examples:
 - Integer: 0
 
 ### calculateFormulas:
-A boolean representing whether or not the function should attempt to calculate Excel formulas. 
+A boolean representing whether the function should attempt to calculate Excel formulas. 
 - True: Calculates Excel formula at runtime (e.g. if A1 contains 5 and B1 contains 10, and the formula in C1 is "=A1+B1", then the returned value for cell C1 would be 15)
 - False: Returns the plaintext representation of the Excel formula (e.g. "=A1+B1")
+
+### keepCommentLines:
+A boolean representing whether to keep comment lines or skip over them.
+- True: Keeps comment lines in the returned dictionary
+- False: Removes comment lines; comment lines are not retained in the returned dictionary
